@@ -1,7 +1,5 @@
 # QHO-Prob
-Calculates probability as a function of time for measuring a particle in a given region in a 1D QHO state using trapezoidal integration and Scipy. 
-
-
+Calculates probability as a function of time for measuring a particle in a given region of space in a 1D QHO potential using trapezoidal integration and SciPy. This program computes the probability function for an arbitrary two state superposition of the QHO. Parameters such as the two eigenstates comprising the superposition, and their coefficients can all be specified 
 
 Run main.py from the command line with the optional parameters:
 
