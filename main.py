@@ -46,7 +46,7 @@ def main(a,b,n1,n2,c1, tmax, Nt):
     plt.figure()
     plt.plot(t, np.real(P_real),'ro')
     plt.plot(t, np.real(P),'b.')
-    plt.legend(['Scipy Integral', "My function"])
+    plt.legend(['Scipy Integral', "Trapezoid Integral"])
     plt.title(f'Probability of Finding the Particle between x = {np.round(a,2)} and x = {np.round(b,2)} for the state: {np.round(np.sqrt(c1), 2)}|{n1}> + {np.round(np.sqrt(1-c1),2)}|{n2}> ')
     plt.ylabel("P(t)")
     plt.xlabel("Time")
@@ -60,13 +60,15 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     print("set the integral bounds (x_min, x_max) the energy level of the two states in the superposition (n1, n2) and the probability of measuring the superposition in the n1 state (c1)")
-    parser.add_argument('-xmin', help='x_min', type=float, default = 0.0)
-    parser.add_argument('-xmax', help='x_max', type=float, default = 1.0)
-    parser.add_argument('-n1', help='n1', type=int, default = 0)
-    parser.add_argument('-n2', help='n2', type=int, default = 1)
-    parser.add_argument('-c1', help='c1', type=float, default = 0.5)
-    parser.add_argument('-tmax', help='max t', type=float, default = 10)
-    parser.add_argument('-Nt', help='Nt', type=int, default = 100)
+    parser.add_argument('-xmin', help='x min', type=float, default = 0.0)
+    parser.add_argument('-xmax', help='x max', type=float, default = 1.0)
+    parser.add_argument('-n1', help='n1, energy level of first eigenstate in the superposition', type=int, default = 0)
+    parser.add_argument('-n2', help='n2, energy level of second eigenstate in the superposition', type=int, default = 1)
+    parser.add_argument('-c1', help='c1, probability of measuring the superposition state in n1 eigenstate', type=float, default = 0.5)
+    parser.add_argument('-tmax', help='max time', type=float, default = 10)
+    parser.add_argument('-Nt', help='number of time points', type=int, default = 100)
+
+
 
 
 
